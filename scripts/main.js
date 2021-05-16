@@ -8,8 +8,8 @@ $(document).ready(() => {
 
         //$('nav span').removeClass('active');
         //$('nav')
-            //.find('[dest="' + anchor + '"]')
-            //.addClass('active');
+        //.find('[dest="' + anchor + '"]')
+        //.addClass('active');
         $('html, body').animate(
             {
                 scrollTop: $('#' + anchor).offset().top
@@ -44,6 +44,89 @@ $(document).ready(() => {
     form.addEventListener("submit", handleSubmit)
 
     $(".iconify")[0].style = "";
+    var partJson = 
+    {
+      "particles": {
+        "number": {
+          "value": 15,
+          "density": {
+            "enable": true,
+            "value_area": 500,
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#FF0000"
+          },
+
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 8,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 3,
+            "size_min": 1,
+            "sync": true
+          }
+        },
+        "line_linked":{
+          "enable":false
+        },
+        "move": {
+          "enable": true,
+          "bounce":true,
+          "speed": 1,
+          "direction": "top",
+          "random": false,
+          "straight": false,
+          "out_mode": "none",
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity":{
+        "events":{
+            "onhover":{
+                "enable":false
+            }
+        }
+      },
+      
+      "retina_detect": false,
+      "config_demo": {
+        "hide_card": false,
+        "background_color": "#b61924",
+        "background_image": "",
+        "background_position": "150% 150%",
+        "background_repeat": "no-repeat",
+        "background_size": "cover"
+      }
+    };
+  
+
+
+    var jsonUri = "data:text/plain;base64,"+window.btoa(JSON.stringify(partJson));
+
+    particlesJS.load("particles-js", jsonUri);
 });
 
 /*

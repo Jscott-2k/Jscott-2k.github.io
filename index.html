@@ -25,8 +25,12 @@
 
     <!-- ICONIFY-->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+
     <!-- LOCAL SCRIPTS -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/particles.js"></script>
+    <script src="scripts/main.js" defer="defer"></script>
 
 
     <!-- LOCAL STYLESHEETS -->
@@ -52,11 +56,17 @@
 
         <section id="home" class="flex height-fix">
 
+            <div class="particleContainer">
+                <div id="particles-js">
+                </div>
+            </div>
 
             <div class="sectionContent flex">
 
-                <div class="header">Justin Scott</div>
-                <div class="subheader">Software Developer</div>
+                <div class="header">Hi, I'm <div class="highlight-wrapper"><span class="highlight">Justin Scott</span>
+                    </div>
+                </div>
+                <div class="subheader">A Software Developer!</div>
                 <button class="pagelink" dest="about">
                     <div id="viewmore">View My Work <span class="iconify" data-icon="mdi-arrow-right"
                             data-inline="false"></span></div>
