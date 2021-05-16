@@ -16,46 +16,92 @@
     <!-- ICON IMG -->
     <link rel="icon" href="images/icon.jpg">
 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@295&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+
+    <!-- ICONIFY-->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!-- LOCAL SCRIPTS -->
     <script src="scripts/main.js"></script>
+
 
     <!-- LOCAL STYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/mobile.css">
 
+
+
+
 </head>
 
 <body>
-    <!-- HOME-->
-    <section id="home">
-        <div class="header">HOME</div>
-    </section>
 
+    <div class="overflow">
 
-    <!-- ABOUT-->
-    <section id="about">
-        <div class="header">ABOUT</div>
-    </section>
-
-    <!-- PROJECTS-->
-    <section id="projects">
-        <div class="header">PROJECTS</div>
-
-    </section>
-
-    <!-- CONTACT-->
-    <section id="contact">
-        <div class="header">CONTACT</div>
-        <div class="formContainer">
-            <form id="contact-form" action="https://formspree.io/f/xnqlpzdz" method="POST">
-                <input type="name" name="name" placeholder="Your name" />
-                <input type="email" name="email" placeholder="Your email" />
-                <textarea name="message" placeholder="Your message"></textarea>
-                <button id="my-form-button">SUBMIT</button>
-                <p id="contact-form-status"></p>
-            </form>
+        <div class="modal-wrap flex">
+            <div class="mask"></div>
+            <div class="modal" id="modal" style="max-width: 700px;">
+            </div>
         </div>
-    </section>
+
+        <!-- HOME-->
+
+        <section id="home" class="flex height-fix">
+
+
+            <div class="sectionContent flex">
+
+                <div class="header">Justin Scott</div>
+                <div class="subheader">Software Developer</div>
+                <button class="pagelink" dest="about">
+                    <div id="viewmore">View My Work <span class="iconify" data-icon="mdi-arrow-right"
+                            data-inline="false"></span></div>
+            </div>
+        </section>
+
+        <!-- ABOUT-->
+        <section id="about">
+
+            <div class="section-wrapper">
+                <div class="sectionTransitionImage">
+                    <img src="images/edge.svg">
+                </div>
+                <div class="header">ABOUT</div>
+                <div class="content">
+                    <p>
+                        I am a senior computer science student at John Carroll University</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS-->
+        <section id="projects">
+            <div class="header">PROJECTS</div>
+        </section>
+
+        <!-- CONTACT-->
+        <section id="contact">
+            <div class="section-wrapper">
+                <div class="sectionTransitionImage">
+                    <img src="images/edge.svg">
+                </div>
+                <div class="header">CONTACT</div>
+                <div class="formContainer flex">
+                    <form id="contact-form" action="https://formspree.io/f/xnqlpzdz" method="POST">
+                        <input type="name" name="name" placeholder="Your name" />
+                        <input type="email" name="email" placeholder="Your email" />
+                        <textarea name="message" placeholder="Your message"></textarea>
+                        <button id="my-form-button">SUBMIT</button>
+                        <p id="contact-form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>
