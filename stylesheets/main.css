@@ -2,20 +2,50 @@
     box-sizing: border-box;
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 body {
     scroll-behavior: smooth;
     margin: 0;
     background-color: #333;
     font-family: "Raleway";
+}
+
+section:nth-of-type(1) {
+    color: #fff;
+    height: 100vh;
+}
+
+button {
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(35, 30, 43, .5);
+    transition: all 0.5s;
+    padding: .5em;
+    font-family: 'Raleway';
+}
+
+button:hover {
+    border: 1px solid rgb(0, 179, 179);
+    box-shadow: 0 0 .5em black;
+}
+
+a {
+    text-decoration: none;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: rgb(24, 28, 41);
+    color: white;
+    text-align: center;
+}
+
+footer div {
+    padding: 2em;
 }
 
 .overflow {
@@ -57,9 +87,12 @@ body {
     transition: all 0.3s;
 }
 
-section:nth-of-type(1) {
-    color: #fff;
+.canvas {
     height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 .flex {
@@ -69,25 +102,8 @@ section:nth-of-type(1) {
     justify-content: center;
 }
 
-#projects .content {
-    background-color: #333;
-}
-
 .content {
     min-height: 50vh;
-}
-
-#about .content {
-    background-color: #fff;
-}
-
-.canvas {
-    /*background: url() center center/cover;*/
-    height: 100vh;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 .header {
@@ -127,23 +143,7 @@ section:nth-of-type(1) {
 
 .formContainer {
     margin: auto;
-    width: 35%;
-}
-
-button {
-    border: 1px solid #fff;
-    cursor: pointer;
-    color: white;
-    background-color: rgb(35, 30, 43, .5);
-    transition: all 0.5s;
-    padding: .5em;
-    font-family: 'Raleway';
-}
-
-button:hover {
-    background-color: rgb(0, 179, 179, .5);
-    border: 1px solid rgb(0, 179, 179);
-    box-shadow: 0 0 .25em black;
+    width: max-content;
 }
 
 .flexSpace {
@@ -217,7 +217,7 @@ button:hover div .iconify {
     font-size: 26px;
 }
 
-.content .flexRow>p {
+.content p {
     margin: 2em
 }
 
@@ -267,15 +267,6 @@ button:hover div .iconify {
     color: black;
 }
 
-a {
-    text-decoration: none;
-}
-
-button a {
-    text-decoration: none;
-    color: black;
-}
-
 .linkHighlight {
     color: blue;
     transition: all .5s;
@@ -285,84 +276,41 @@ button a {
     color: rgb(0, 179, 179);
 }
 
-#transcript {
-    align-self: center;
+button {
+    position: relative;
 }
 
-#home {
-    text-align: center;
-}
 
-#contact-form {
-    display: flex;
-    flex-direction: column;
+
+.buttonUnderlay {
+    clip-path: inset(0% 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgb(0, 9, 9);
+    z-index: 0;
 }
 
-#contact-form>input, #contact-form>textarea, #contact-form>button {
-    margin: 5px;
-    padding: 10px;
-    outline: none;
-    background: rgb(4, 8, 21);
-    border: 0;
-    text-indent: 0px;
-    color: white;
-}
-
-#contact-form>textarea {
-    height: 15vh;
+button:hover .buttonUnderlay {
+    animation: none;
+    animation: insetFill .5s ease-out forwards;
 }
 
 .pagelink {
     background-color: rgb(0, 0, 0, 0);
     border-color: rgb(255, 255, 255, .25);
-}
-
-#viewmore {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    font-size: 24px;
-}
-
-#viewmore>* {
-    margin-left: .5em;
-}
-
-#about .section-wrapper .header {
-    width: 100%;
-    color: black;
-}
-
-#about {
-    padding-bottom: 2em;
-    background-color: white;
-}
-
-#projects .section-wrapper {
-    background-color: #333;
-}
-
-#about .sectionTransitionImage>img {
-    background-color: white;
-}
-
-#contact .sectionTransitionImage>img {
-    background-color: rgb(24, 28, 41);
+    width: 225px;
+    opacity: 0;
+    ;
+    height: 60px;
+    animation: fadeIn .5s ease-in 1s forwards;
 }
 
 .header-wrapper {
     position: relative;
     padding: 1em;
-}
-
-@keyframes shift {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 0%;
-    }
 }
 
 .header-overlay {
@@ -393,10 +341,6 @@ button a {
     flex-direction: column;
 }
 
-#contact .section-wrapper {
-    background-color: rgb(24, 28, 41);
-}
-
 .sectionTransitionImage {
     position: relative;
     width: 100%;
@@ -405,14 +349,6 @@ button a {
 
 .highlight {
     color: red;
-}
-
-#particles-js {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
 }
 
 .particleContainer {
@@ -473,15 +409,46 @@ button a {
     transition: all .5s ease;
 }
 
-.project-wrapper:hover {}
-
 .formContainer.js-scroll {
     opacity: 0;
     transition: all .25s ease;
+    width: max-content;
 }
 
 .formContainer.js-scroll.scrolled {
     opacity: 1;
+}
+
+#contact-form>input, #contact-form>textarea, #contact-form>button {
+    margin: 5px;
+    padding: 10px;
+    outline: none;
+    background: rgb(4, 8, 21);
+    border: 0;
+    text-indent: 0px;
+    color: white;
+    overflow: hidden;
+}
+
+#contact-form>button {
+    border: 1px solid rgb(4, 8, 21);
+    transition: border 1s ease;
+}
+
+#contact-form>button:hover {
+    border: 1px solid rgb(0, 179, 179);
+    box-shadow: 0 0 .25em black;
+}
+
+#contact-form>textarea {
+    height: 15vh;
+    min-width: 35vw;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 35vw;
 }
 
 #threeDpath {
@@ -492,9 +459,79 @@ button a {
     background-image: url("../images/dokkan.PNG");
 }
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#viewmore {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 24px;
+    z-index: 1;
+    transition: color .5s ease, font-size .5s ease;
+}
+
+button:hover #viewmore {
+    color: aquamarine;
+}
+
+#viewmore>* {
+    margin-left: .5em;
+}
+
+#about .section-wrapper .header {
+    width: 100%;
+    color: black;
+}
+
+#about .content {
+    background-color: #fff;
+}
+
+#about {
+    padding-bottom: 2em;
+    background-color: white;
+}
+
+#projects .section-wrapper {
+    background-color: #333;
+}
+
+#about .sectionTransitionImage>img {
+    background-color: white;
+}
+
+#contact .sectionTransitionImage>img {
+    background-color: rgb(24, 28, 41);
+}
+
+#contact .section-wrapper {
+    background-color: rgb(24, 28, 41);
+}
+
+#projects .content {
+    background-color: #333;
+}
+
+#transcript {
+    align-self: center;
+}
+
+#home {
+    text-align: center;
+}
+
 .projects>* {
     margin: 1em;
 }
+
+/* From StackOverflow */
 
 .noselect {
     -webkit-touch-callout: none;
@@ -508,16 +545,16 @@ button a {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
-
-footer {
-    background-color: rgb(24, 28, 41);
-    color: white;
-    text-align: center;
+.infoRow{
+    display: flex;
+    justify-content: center;
 }
-
-footer div{
-    padding:2em;
+.infoRow p{
+    margin:0;
+}
+.infoRow p:not(:first-child)::before {
+    content:"\2240";
+    margin:1em;
 }

@@ -26,15 +26,19 @@
     <!-- ICONIFY-->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
+    <!-- PARTICLES -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 
     <!-- LOCAL SCRIPTS -->
     <script src="scripts/particles.js"></script>
+    
     <script src="scripts/main.js" defer="defer"></script>
 
 
+    
     <!-- LOCAL STYLESHEETS -->
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/anim.css"> <!-- Keyframes must be loaded first-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" >
     <link rel="stylesheet" type="text/css" href="stylesheets/mobile.css">
 
 
@@ -73,6 +77,7 @@
                     <div class="subheader"><i>A Professional Software Developer!</i></div>
                 </div>
                 <button class="pagelink" dest="about">
+                    <div class="buttonUnderlay"></div>
                     <div id="viewmore">View My Work <span class="iconify" data-icon="mdi-arrow-right"
                             data-inline="false"></span></div>
             </div>
@@ -101,7 +106,7 @@
                             Education
                         </h3>
                         <div class="flex">
-                            <div class="flexRow js-scroll">
+                            <div class="infoRow flexRow js-scroll">
                                 <p><b>Learning</b></p>
                                 <p><b>Leadership</b></p>
                                 <p><b>Service</b></p>
@@ -131,7 +136,7 @@
                             Skills
                         </h3>
 
-                        <div class="flexRow js-scroll">
+                        <div class="infoRow flexRow js-scroll">
 
                             <p><b>Java</b></p>
                             <p><b>HTML</b></p>
@@ -159,7 +164,7 @@
                         <h3>
                             Hobbies
                         </h3>
-                        <div class="flexRow js-scroll">
+                        <div class="infoRow flexRow js-scroll">
                             <p><b>Games</b></p>
                             <p><b>Music</b></p>
                             <p><b>Programming</b></p>
