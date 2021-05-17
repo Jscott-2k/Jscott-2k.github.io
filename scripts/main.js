@@ -162,6 +162,53 @@ $(document).ready(() => {
     var jsonUri = "data:text/plain;base64,"+window.btoa(JSON.stringify(partJson));
 
     particlesJS.load("particles-js", jsonUri);
+
+
+
+    var projectOverlays = Object.values(document.getElementsByClassName("project-overlay"));
+    var projects = Object.values(document.getElementsByClassName("project"));
+    var projectsWrappers = Object.values(document.getElementsByClassName("project-wrapper"));
+
+    var overlayMap = new Map();
+    var wrapperMap = new Map();
+
+    let i = 0;
+    projects.forEach(e=>{
+        overlayMap.set(e, projectOverlays[i]);
+        i++;
+    });
+    i = 0;
+    projectsWrappers.forEach(e=>{
+        wrapperMap.set(e, projectOverlays[i]);
+        i++;
+    });
+
+    console.log(overlayMap);
+    projectOverlays.forEach( e =>{
+        console.log(e);
+        e.addEventListener("mouseenter", function(){
+            e.style.top = "70%";
+            e.style.height = "30%";
+            e.style.backgroundColor = "#000000";
+            e.firstElementChild.style.color = "#FFFFFF";
+            e.firstElementChild.style.fontSize = "14px";
+        });
+    });
+    // projects.forEach(e =>{
+    //     e.addEventListener("mouseleave", function(){
+    //         overlayMap.get(e).style.top = "0%";
+    //         overlayMap.get(e).style.height = "100%";
+    //     });
+    // });
+    projectsWrappers.forEach(e=>{
+        e.addEventListener("mouseleave", function(){
+            wrapperMap.get(e).style.top = "0%";
+            wrapperMap.get(e).style.height = "100%";
+            wrapperMap.get(e).style.backgroundColor = "#FFFFFF";
+            wrapperMap.get(e).firstElementChild.style.color = "#000000"
+            wrapperMap.get(e).firstElementChild.style.fontSize = "26px";
+        });
+    });
 });
 
 /*
