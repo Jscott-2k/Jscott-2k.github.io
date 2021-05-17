@@ -1,24 +1,45 @@
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait)  {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {}
 
-}
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1368px) 
-  and (orientation: landscape)  {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1368px) and (orientation: landscape) {}
 
-}
-/* Portrait */
-@media only screen 
-  and (max-device-width: 767px) 
-  and (orientation: portrait) { 
-    
-}
-/* Landscape */
-@media only screen 
-  and (max-device-width: 767px) 
-  and (orientation: landscape) { 
+@media only screen and (max-device-width: 767px) {
+  .header {
+    font-size: 28px;
+  }
+  .highlight-wrapper {
+    font-size: 28px;
+  }
+  .highlight-wrapper:hover {
+    font-size: 36px;
+  }
+  .subheader {
+    font-size: 18px;
+  }
+  .seperator.js-scroll.scrolled {
+    width: 25%;
+  }
+  .whiteseperator.js-scroll.scrolled {
+    width: 25%;
+  }
+  #contact-form {
+    min-width: 75vw;
+  }
+  .projectDetails h3 {
+    font-size: 18px;
+  }
 
+  .flexRow {
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
+.infoSection p{
+  white-space: normal;
+}
+.imageContainer{
+  display:none;
+}
+}
+
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {}

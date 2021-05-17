@@ -125,7 +125,6 @@ footer div {
 
 .highlight-wrapper {
     display: inline;
-    ;
     font-size: 48px;
     transition: all .5s;
 }
@@ -520,6 +519,7 @@ button:hover #viewmore {
 
 #projects .content {
     background-color: #333;
+    min-height: 75vh;
 }
 
 #transcript {
@@ -570,10 +570,7 @@ button:hover #viewmore {
 }
 .projectDetails div{
     opacity: 0;
-    position:absolute;
-    top:0;
     width: 50vw;
-    height:5vw;
 }
 .projectDetails div[visible="false"]{
     opacity: 0;
@@ -610,8 +607,12 @@ button:hover #viewmore {
     color:white;
 }
 .socials .linkHighlight{
-    color:red;
+    color:rgb(0, 179, 179)
+
 }
 .socials .linkHighlight:hover{
-    color:rgb(0, 179, 179)
+    color:red;
+}
+.projectDetails div{
+    width:80%;
 }

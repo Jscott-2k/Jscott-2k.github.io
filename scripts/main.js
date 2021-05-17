@@ -167,7 +167,7 @@ $(document).ready(() => {
 
   var hideAllProjectDetails = ()=>{
     var allDetails = document.querySelectorAll(".projectDetails div");
-
+    $("#projectDetailsPreload").append(allDetails);
     allDetails.forEach(e=>{
       e.setAttribute("visible", false);
     });
@@ -179,6 +179,7 @@ $(document).ready(() => {
     hideAllProjectDetails();
     var details = document.getElementById(name+"-details");
     details.setAttribute("visible", true);
+    $("#projectDetailsContainer").append(details);
   };
 
 
