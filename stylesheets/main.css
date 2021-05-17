@@ -452,6 +452,9 @@ button a{
 #threeDpath{
     background-image: url("../images/3Dpath.PNG");
 }
+#dokkan{
+    background-image: url("../images/dokkan.PNG");
+}
 .projects > * {
     margin: 1em;
 }
