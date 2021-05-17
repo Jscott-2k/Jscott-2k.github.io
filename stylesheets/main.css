@@ -393,7 +393,9 @@ button:hover .buttonUnderlay {
     text-align: center;
     transition: all .25s ease;
 }
-
+.project-overlay[active="true"] p{
+    font-size:14px;
+}
 .project {
     position: absolute;
     top: 0;

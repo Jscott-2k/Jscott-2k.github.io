@@ -211,7 +211,7 @@ $(document).ready(() => {
       e.style.height = "30%";
       e.style.backgroundColor = "#000000";
       e.firstElementChild.style.color = "#FFFFFF";
-      e.firstElementChild.style.fontSize = "14px";
+
       e.setAttribute("active", true);
     });
   });
@@ -226,7 +226,6 @@ $(document).ready(() => {
       wrapperMap.get(e).style.height = "100%";
       wrapperMap.get(e).style.backgroundColor = "#FFFFFF";
       wrapperMap.get(e).firstElementChild.style.color = "#000000"
-      wrapperMap.get(e).firstElementChild.style.fontSize = "26px";
       wrapperMap.get(e).setAttribute("active", false);
     });
 
