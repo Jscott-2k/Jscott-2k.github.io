@@ -62,10 +62,14 @@
             </div>
 
             <div class="sectionContent flex">
-
-                <div class="header">Hi, I'm <div class="highlight-wrapper"><span class="highlight">Justin Scott</span>
+                <div class="header-wrapper">
+                    <div class="header-overlay">
+                        <div></div>
                     </div>
-                </div>
+                    <div class="header">Hi, I'm <div class="highlight-wrapper"><span class="highlight">Justin Scott</span>
+                        </div>
+                    </div>
+                 </div>
                 <div class="subheader">A Software Developer!</div>
                 <button class="pagelink" dest="about">
                     <div id="viewmore">View My Work <span class="iconify" data-icon="mdi-arrow-right"
@@ -76,38 +80,110 @@
         <!-- ABOUT-->
         <section id="about">
 
-            <div class="section-wrapper">
+            <div class="section-wrapper scroll-container">
                 <div class="sectionTransitionImage">
                     <img src="images/edge.svg">
                 </div>
                 <div class="header">ABOUT</div>
                 <div class="content">
-                    <p>
-                        I am a senior computer science student at John Carroll University</p>
+
+                    <div class="flex">
+                        <div class="seperator js-scroll"></div>
+                        <div class="flexRow js-scroll">
+                            <button id="resume"><a
+                                    href="https://drive.google.com/uc?export=download&id=1NFkSKaj-2_K4b51SfdcDh2bNdULnTVAW">Download
+                                    My Résumé</a></button>
+                            <button id="transcript">Download My Transcript</button>
+                        </div>
+
+                        <h3>
+                            Education
+                        </h3>
+                        <div class="flex">
+                            <div class="flexRow js-scroll">
+                                <p><b>Learning</b></p>
+                                <p><b>Leadership</b></p>
+                                <p><b>Service</b></p>
+                            </div>
+                            <div class="flexRow js-scroll">
+                                <img class="avatarImage js-scroll" src="images/jcuAvatar.png">
+                                <div>
+                                    <p>
+                                        Class of 2022 at <a class="linkHighlight" target="_blank"
+                                            href="https://jcu.edu/">John Carroll University</a>
+                                    </p>
+                                    <p>3.79 GPA | 3.97 Department GPA</p>
+                                    <p>Pursuing bachelor's degree in Computer Science</p>
+                                    <p>Minor in Data Science</p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <h3>
+                            Skills
+                        </h3>
+
+                        <div class="flexRow js-scroll">
+
+                            <p><b>Java</b></p>
+                            <p><b>HTML</b></p>
+                            <p><b>JavaScript</b></p>
+                            <p><b>CSS</b></p>
+                        </div>
+                        <img class="avatarImage js-scroll" src="images/codingAvatar.png">
+
+                        <h3>
+                            Hobbies
+                        </h3>
+                        <div class="flexRow js-scroll">
+                            <p><b>Games</b></p>
+                            <p><b>Music</b></p>
+                            <p><b>Programming</b></p>
+                        </div>
+                        <img class="avatarImage js-scroll" src="images/drumsAvatar.png">
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- PROJECTS-->
         <section id="projects">
-            <div class="header">PROJECTS</div>
+            <div class="section-wrapper">
+                <div class="sectionTransitionImage">
+                    <img src="images/edge2.svg">
+                </div>
+                <div class="header">PROJECTS</div>
+
+                <div class="content">
+                    <div class="flex">
+                        <div class="whiteseperator js-scroll"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- CONTACT-->
         <section id="contact">
+
             <div class="section-wrapper">
                 <div class="sectionTransitionImage">
                     <img src="images/edge.svg">
                 </div>
+
                 <div class="header">CONTACT</div>
-                <div class="formContainer flex">
-                    <form id="contact-form" action="https://formspree.io/f/xnqlpzdz" method="POST">
-                        <input type="name" name="name" placeholder="Your name" />
-                        <input type="email" name="email" placeholder="Your email" />
-                        <textarea name="message" placeholder="Your message"></textarea>
-                        <button id="my-form-button">SUBMIT</button>
-                        <p id="contact-form-status"></p>
-                    </form>
+                <div class="content">
+                    <div class="formContainer flex">
+                        <form id="contact-form" action="https://formspree.io/f/xnqlpzdz" method="POST">
+                            <input type="name" name="name" placeholder="Your name" />
+                            <input type="email" name="email" placeholder="Your email" />
+                            <textarea name="message" placeholder="Your message"></textarea>
+                            <button id="my-form-button">SEND MESSAGE</button>
+                            <p id="contact-form-status"></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
