@@ -45,6 +45,10 @@
   .project-overlay[active="true"] p{
     font-size:12px;
   }
+  .infoRow p:not(:first-child)::before {
+    content:"\2240";
+    margin:.25em;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1368px) and (orientation: landscape) {
@@ -95,6 +99,10 @@
   .project-overlay[active="true"] p{
     font-size:12px;
   }
+  .infoRow p:not(:first-child)::before {
+    content:"\2240";
+    margin:.25em;
+  }
 }
 
 @media only screen and (max-device-width: 767px) {
@@ -143,6 +151,10 @@
   }
   .project-overlay[active="true"] p{
     font-size:12px;
+  }
+  .infoRow p:not(:first-child)::before {
+    content:"\2240";
+    margin:.25em;
   }
 }
 
