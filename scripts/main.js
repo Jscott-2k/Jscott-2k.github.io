@@ -112,12 +112,12 @@ $(document).ready(() => {
         }
       },
       "size": {
-        "value": 8,
+        "value": 16,
         "random": true,
         "anim": {
           "enable": false,
           "speed": 3,
-          "size_min": 1,
+          "size_min": 12,
           "sync": true
         }
       },
@@ -142,6 +142,9 @@ $(document).ready(() => {
     "interactivity": {
       "events": {
         "onhover": {
+          "enable": false
+        },
+        "onclick": {
           "enable": false
         }
       }
