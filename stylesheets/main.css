@@ -39,7 +39,7 @@ button a {
 }
 
 footer {
-    background-color: rgb(24, 28, 41);
+    background-color: #1e172e;
     color: white;
     text-align: center;
 }
@@ -254,7 +254,7 @@ button:hover div .iconify {
 }
 
 .infoSection p:nth-child(odd) {
-    margin-left: 4em;
+    margin-left: 2em;
 }
 
 .avatarImage {
@@ -450,6 +450,9 @@ button:hover .buttonUnderlay {
     flex-direction: column;
     min-width: 35vw;
 }
+#contact {
+    color:white;
+}
 
 #threeDpath {
     background-image: url("../images/3Dpath.PNG");
@@ -508,11 +511,11 @@ button:hover #viewmore {
 }
 
 #contact .sectionTransitionImage>img {
-    background-color: rgb(24, 28, 41);
+    background-color: #1e172e
 }
 
 #contact .section-wrapper {
-    background-color: rgb(24, 28, 41);
+    background-color: #1e172e
 }
 
 #projects .content {
@@ -557,4 +560,58 @@ button:hover #viewmore {
 .infoRow p:not(:first-child)::before {
     content:"\2240";
     margin:1em;
+}
+.projectDetails{
+    position:relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.projectDetails div{
+    opacity: 0;
+    position:absolute;
+    top:0;
+    width: 50vw;
+    height:5vw;
+}
+.projectDetails div[visible="false"]{
+    opacity: 0;
+    transition: all .5s;
+    transform: translateY(70px);
+}
+
+.projectDetails div[visible="false"] h3{
+
+    color:white;
+    transition: all .5s;
+    opacity: 0;
+    text-decoration: none;
+}
+.projectDetails div[visible="true"] h3{
+
+    text-decoration: none;
+    color:white;
+    opacity: 1;
+}
+.projectDetails div[visible="true"]{
+    opacity: 1;
+}
+#projects .linkHighlight{
+    color:rgb(0, 179, 179);
+}
+#projects .linkHighlight:hover{
+    color:red;
+}
+#projects .content p {
+    margin:1em;
+}
+.projectDetails p{
+    color:white;
+}
+.socials .linkHighlight{
+    color:red;
+}
+.socials .linkHighlight:hover{
+    color:rgb(0, 179, 179)
 }
