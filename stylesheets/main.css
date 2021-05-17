@@ -90,7 +90,7 @@ section:nth-of-type(1) {
 
 .header {
 
-    font-size: 36px;
+    font-size: 48px;
     text-align: center;
     color: white;
     padding: 10px;
@@ -108,16 +108,16 @@ section:nth-of-type(1) {
 
 .highlight-wrapper{
     display: inline;;
-    font-size:36px;
+    font-size:48px;
     transition: all .5s ;
 
 }
 .highlight-wrapper:hover{
-    font-size:40px;
+    font-size:54px;
 }
 
 .subheader {
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
     color: rgb(184, 184, 184);
     margin-bottom: 1em;
@@ -200,9 +200,7 @@ button:hover div .iconify {
 .flexRow.js-scroll.scrolled{
     opacity: 1;
 }
-.flexRow > div {
-    margin:1em;
-}
+
 .content{
     width:100%;
 }
@@ -214,15 +212,41 @@ button:hover div .iconify {
 .content .flexRow > p {
     margin: 2em
 }
-.avatarImage.js-scroll {
-    width:100px;
+
+.imageContainer.js-scroll{
     opacity: 0;
-    transition: all .25s ease-out;
+    transition: all .5s ease-out;
+    width:10px;
+    transform-origin: center;
+    transform:rotate(90deg)  skew(0deg);
 }
-.avatarImage.js-scroll.scrolled {
-    width:200px;
+.imageContainer.js-scroll.scrolled{
     opacity: 1;
+    transform: scale(15,15) rotate(360deg) skew(0deg);
 }
+
+.imageContainer.js-scroll.scrolled:hover{
+    transform: scale(15,15) translateY(1px);
+}
+.imageContainerContainer{
+    width:25%;
+    align-self: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.infoSection p{
+white-space:nowrap;
+}
+.infoSection p:nth-child(even){
+    margin:2em;
+}
+.infoSection p:nth-child(odd){
+    margin-left:4em;
+}
+.avatarImage {
+    width:100%;
+}
+
 .content button{
     background-color: rgb(201, 201, 201, .25);
     font-weight: 700;
@@ -288,7 +312,10 @@ button a{
     width: 100%;
     color: black;
 }
-
+#about{
+    padding-bottom: 2em;
+    background-color: white;
+}
 #projects .section-wrapper{
     background-color: #333;
 }
@@ -302,6 +329,7 @@ button a{
 }
 .header-wrapper{
     position: relative;
+    padding:1em;
 }
 @keyframes shift {
     0%{
@@ -315,7 +343,7 @@ button a{
     right: 0;
     top: 0;
     width: 100%;
-    height: 100px;
+    height: 150px;
     background-color: #333;
     animation: shift ease-in-out 1s .1s forwards;
 }
