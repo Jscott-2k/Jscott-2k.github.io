@@ -14,7 +14,32 @@ section:nth-of-type(1) {
     height: 100vh;
 }
 
+/* From StackOverflow */
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#home {
+    text-align: center;
+}
+
+/**
+=== BUTTONS ===
+**/
+
 button {
+    position: relative;
     border: 1px solid #fff;
     cursor: pointer;
     color: white;
@@ -29,14 +54,60 @@ button:hover {
     box-shadow: 0 0 .5em black;
 }
 
-a {
-    text-decoration: none;
+button div .iconify {
+    transform: rotate(0deg);
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    -webkit-transform: rotate(0deg);
+}
+
+button:hover div .iconify {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
 }
 
 button a {
     text-decoration: none;
     color: black;
 }
+
+.buttonUnderlay {
+    clip-path: inset(0% 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 9, 9);
+    z-index: 0;
+}
+
+button:hover .buttonUnderlay {
+    animation: none;
+    animation: insetFill .5s ease-out forwards;
+}
+
+#viewmore {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 24px;
+    z-index: 1;
+    transition: color .5s ease, font-size .5s ease;
+}
+
+button:hover #viewmore {
+    color: aquamarine;
+}
+
+#viewmore>* {
+    margin-left: .5em;
+}
+
+/**
+=== FOOTER ===
+**/
 
 footer {
     background-color: #1e172e;
@@ -47,6 +118,10 @@ footer {
 footer div {
     padding: 2em;
 }
+
+/**
+=== MODAL ===
+**/
 
 .overflow {
     overflow-x: hidden;
@@ -87,6 +162,10 @@ footer div {
     transition: all 0.3s;
 }
 
+/**
+=== PARTICLES ===
+**/
+
 .canvas {
     height: 100vh;
     left: 0;
@@ -95,6 +174,24 @@ footer div {
     width: 100%;
 }
 
+.particleContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+/**
+=== FLEX ===
+**/
+
 .flex {
     align-items: center;
     display: flex;
@@ -102,8 +199,77 @@ footer div {
     justify-content: center;
 }
 
+.flexRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.flexRow.js-scroll {
+    opacity: 0;
+    transition: all .5s ease-out;
+}
+
+.flexRow.js-scroll.scrolled {
+    opacity: 1;
+}
+
+.flexSpace {
+    width: 200px;
+}
+
+/**
+=== CONTENT ===
+**/
+
 .content {
     min-height: 50vh;
+    width: 100%;
+}
+
+.content h3 {
+    text-decoration-style: dotted;
+    text-decoration: underline;
+    font-size: 26px;
+}
+
+.content p {
+    margin: 2em
+}
+
+.content button {
+    background-color: rgb(201, 201, 201, .25);
+    font-weight: 700;
+    color: black;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: center;
+}
+
+.infoRow p {
+    margin: 0;
+}
+
+.infoRow p:not(:first-child)::before {
+    content: "\2240";
+    margin: 1em;
+}
+
+.header-wrapper {
+    position: relative;
+    padding: 1em;
+}
+
+.header-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #333;
+    animation: shift ease-in-out 1s .1s forwards;
 }
 
 .header {
@@ -123,6 +289,13 @@ footer div {
     /* Standard */
 }
 
+.subheader {
+    font-size: 32px;
+    text-align: center;
+    color: rgb(184, 184, 184);
+    margin-bottom: 1em;
+}
+
 .highlight-wrapper {
     display: inline;
     font-size: 48px;
@@ -133,21 +306,14 @@ footer div {
     font-size: 54px;
 }
 
-.subheader {
-    font-size: 32px;
-    text-align: center;
-    color: rgb(184, 184, 184);
-    margin-bottom: 1em;
-}
-
 .formContainer {
     margin: auto;
     width: max-content;
 }
 
-.flexSpace {
-    width: 200px;
-}
+/**
+=== SEPERATOR ===
+**/
 
 .seperator.js-scroll {
     width: 0;
@@ -179,46 +345,9 @@ footer div {
     border-radius: 2px;
 }
 
-button div .iconify {
-    transform: rotate(0deg);
-    transition: all .25s ease;
-    -webkit-transition: all .25s ease;
-    -webkit-transform: rotate(0deg);
-}
-
-button:hover div .iconify {
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-}
-
-.flexRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.flexRow.js-scroll {
-    opacity: 0;
-    transition: all .5s ease-out;
-}
-
-.flexRow.js-scroll.scrolled {
-    opacity: 1;
-}
-
-.content {
-    width: 100%;
-}
-
-.content h3 {
-    text-decoration-style: dotted;
-    text-decoration: underline;
-    font-size: 26px;
-}
-
-.content p {
-    margin: 2em
-}
+/**
+=== IMAGE CONTAINER ===
+**/
 
 .imageContainer.js-scroll {
     opacity: 0;
@@ -244,6 +373,10 @@ button:hover div .iconify {
     margin-right: 100px;
 }
 
+/**
+=== INFO SECTION ===
+**/
+
 .infoSection p {
     white-space: nowrap;
 }
@@ -260,11 +393,9 @@ button:hover div .iconify {
     width: 100%;
 }
 
-.content button {
-    background-color: rgb(201, 201, 201, .25);
-    font-weight: 700;
-    color: black;
-}
+/**
+=== LINKS ===
+**/
 
 .linkHighlight {
     color: blue;
@@ -275,26 +406,8 @@ button:hover div .iconify {
     color: rgb(0, 179, 179);
 }
 
-button {
-    position: relative;
-}
-
-
-
-.buttonUnderlay {
-    clip-path: inset(0% 50%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 9, 9);
-    z-index: 0;
-}
-
-button:hover .buttonUnderlay {
-    animation: none;
-    animation: insetFill .5s ease-out forwards;
+a {
+    text-decoration: none;
 }
 
 .pagelink {
@@ -307,20 +420,9 @@ button:hover .buttonUnderlay {
     animation: fadeIn .5s ease-in 1s forwards;
 }
 
-.header-wrapper {
-    position: relative;
-    padding: 1em;
-}
-
-.header-overlay {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 150px;
-    background-color: #333;
-    animation: shift ease-in-out 1s .1s forwards;
-}
+/**
+=== SECTION ===
+**/
 
 .sectionTransitionImage>img {
     position: absolute;
@@ -350,11 +452,9 @@ button:hover .buttonUnderlay {
     color: red;
 }
 
-.particleContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+/**
+=== PROJECT ===
+**/
 
 .project-wrapper {
     width: 250px;
@@ -393,9 +493,11 @@ button:hover .buttonUnderlay {
     text-align: center;
     transition: all .25s ease;
 }
-.project-overlay[active="true"] p{
-    font-size:14px;
+
+.project-overlay[active="true"] p {
+    font-size: 14px;
 }
+
 .project {
     position: absolute;
     top: 0;
@@ -410,6 +512,90 @@ button:hover .buttonUnderlay {
     transition: all .5s ease;
 }
 
+.projectDetails {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.projectDetails div {
+    opacity: 0;
+    width: 50vw;
+}
+
+.projectDetails div[visible="false"] {
+    opacity: 0;
+    transition: all .5s;
+    transform: translateY(70px);
+}
+
+.projects>* {
+    margin: 1em;
+}
+
+.projectDetails div[visible="false"] h3 {
+    color: white;
+    transition: all .5s;
+    opacity: 0;
+    text-decoration: none;
+}
+
+.projectDetails div[visible="true"] h3 {
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.projectDetails div[visible="true"] {
+    opacity: 1;
+}
+
+#projects .linkHighlight {
+    color: rgb(0, 179, 179);
+}
+
+#projects .linkHighlight:hover {
+    color: red;
+}
+
+#projects .content p {
+    margin: 1em;
+}
+
+.projectDetails p {
+    color: white;
+}
+
+.projectDetails div {
+    width: 80%;
+}
+
+#projects .content {
+    background-color: #333;
+    min-height: 75vh;
+}
+
+#projects .section-wrapper {
+    background-color: #333;
+}
+
+#threeDpath {
+    background-image: url("../images/3Dpath.PNG");
+}
+
+#dokkan {
+    background-image: url("../images/dokkan.PNG");
+}
+
+#tetris {
+    background-image: url("../images/tetris.png");
+}
+
+/**
+=== CONTACT ===
+**/
 .formContainer.js-scroll {
     opacity: 0;
     transition: all .25s ease;
@@ -451,45 +637,31 @@ button:hover .buttonUnderlay {
     flex-direction: column;
     min-width: 35vw;
 }
+
 #contact {
-    color:white;
+    color: white;
 }
 
-#threeDpath {
-    background-image: url("../images/3Dpath.PNG");
+.socials .linkHighlight {
+    color: rgb(0, 179, 179)
 }
 
-#dokkan {
-    background-image: url("../images/dokkan.PNG");
-}
-#tetris {
-    background-image: url("../images/tetris.png");
-}
-#particles-js {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
+.socials .linkHighlight:hover {
+    color: red;
 }
 
-#viewmore {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    font-size: 24px;
-    z-index: 1;
-    transition: color .5s ease, font-size .5s ease;
+#contact .sectionTransitionImage>img {
+    background-color: #1e172e
 }
 
-button:hover #viewmore {
-    color: aquamarine;
+#contact .section-wrapper {
+    background-color: #1e172e
 }
 
-#viewmore>* {
-    margin-left: .5em;
-}
+
+/**
+=== ABOUT ===
+**/
 
 #about .section-wrapper .header {
     width: 100%;
@@ -505,118 +677,10 @@ button:hover #viewmore {
     background-color: white;
 }
 
-#projects .section-wrapper {
-    background-color: #333;
-}
-
 #about .sectionTransitionImage>img {
     background-color: white;
 }
 
-#contact .sectionTransitionImage>img {
-    background-color: #1e172e
-}
-
-#contact .section-wrapper {
-    background-color: #1e172e
-}
-
-#projects .content {
-    background-color: #333;
-    min-height: 75vh;
-}
-
 #transcript {
     align-self: center;
-}
-
-#home {
-    text-align: center;
-}
-
-.projects>* {
-    margin: 1em;
-}
-
-/* From StackOverflow */
-
-.noselect {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-.infoRow{
-    display: flex;
-    justify-content: center;
-}
-.infoRow p{
-    margin:0;
-}
-.infoRow p:not(:first-child)::before {
-    content:"\2240";
-    margin:1em;
-}
-.projectDetails{
-    position:relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.projectDetails div{
-    opacity: 0;
-    width: 50vw;
-}
-.projectDetails div[visible="false"]{
-    opacity: 0;
-    transition: all .5s;
-    transform: translateY(70px);
-}
-
-.projectDetails div[visible="false"] h3{
-
-    color:white;
-    transition: all .5s;
-    opacity: 0;
-    text-decoration: none;
-}
-.projectDetails div[visible="true"] h3{
-
-    text-decoration: none;
-    color:white;
-    opacity: 1;
-}
-.projectDetails div[visible="true"]{
-    opacity: 1;
-}
-#projects .linkHighlight{
-    color:rgb(0, 179, 179);
-}
-#projects .linkHighlight:hover{
-    color:red;
-}
-#projects .content p {
-    margin:1em;
-}
-.projectDetails p{
-    color:white;
-}
-.socials .linkHighlight{
-    color:rgb(0, 179, 179)
-
-}
-.socials .linkHighlight:hover{
-    color:red;
-}
-.projectDetails div{
-    width:80%;
 }
