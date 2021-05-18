@@ -1,107 +1,52 @@
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .header {
-    font-size: 28px;
-  }
-  .highlight-wrapper {
-    font-size: 28px;
-  }
-  .highlight-wrapper:hover {
-    font-size: 36px;
-  }
-  .subheader {
-    font-size: 18px;
-  }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .seperator.js-scroll.scrolled {
-    width: 25%;
+    width: 30%;
   }
   .whiteseperator.js-scroll.scrolled {
-    width: 25%;
+    width: 30%;
   }
   #contact-form {
     min-width: 75vw;
   }
-  .projectDetails h3 {
-    font-size: 18px;
-  }
-  .flexRow {
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-  }
   .infoSection p {
     white-space: normal;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .imageContainer.js-scroll.scrolled {
+    opacity: 1;
+    transform: scale(18, 18) rotate( 360deg) skew( 0deg);
   }
   .imageContainer {
-    display: none;
+    margin: auto;
   }
-  .project-wrapper{
-    width: 150px;
-    height: 100px;
+  .imageContainerContainer {
+    width: 10%;
+    align-self: center;
+    margin-left: 75px;
+    margin-right: 75px;
   }
-  .project-overlay p{
-    font-size:16px;
+  .infoRow {
+    font-size: 22px;
+    font-weight: 900;
   }
-  .project-overlay[active="true"] p{
-    font-size:12px;
+  .content h3 {
+    text-decoration-style: dotted;
+    text-decoration: underline;
+    font-size: 28px;
   }
-  .infoRow p:not(:first-child)::before {
-    content:"\2240";
-    margin:.25em;
+  .sectionTransitionImage {
+    padding-bottom: 125px;
+    width: 60%;
+  }
+  .projectDetails {
+    height: 250px;
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1368px) and (orientation: landscape) {
-
-  .header {
-    font-size: 28px;
-  }
-  .highlight-wrapper {
-    font-size: 28px;
-  }
-  .highlight-wrapper:hover {
-    font-size: 36px;
-  }
-  .subheader {
-    font-size: 18px;
-  }
-  .seperator.js-scroll.scrolled {
-    width: 25%;
-  }
-  .whiteseperator.js-scroll.scrolled {
-    width: 25%;
-  }
-  #contact-form {
-    min-width: 75vw;
-  }
-  .projectDetails h3 {
-    font-size: 18px;
-  }
-  .flexRow {
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-  }
-  .infoSection p {
-    white-space: normal;
-  }
-  .imageContainer {
-    display: none;
-  }
-  .project-wrapper{
-    width: 150px;
-    height: 100px;
-  }
-  .project-overlay p{
-    font-size:16px;
-  }
-  .project-overlay[active="true"] p{
-    font-size:12px;
-  }
-  .infoRow p:not(:first-child)::before {
-    content:"\2240";
-    margin:.25em;
+  #contact-form>textarea {
+    height: 25vh;
   }
 }
 
@@ -142,20 +87,43 @@
   .imageContainer {
     display: none;
   }
-  .project-wrapper{
-    width: 150px;
-    height: 100px;
+  .project-wrapper {
+    width: 135px;
+    height: 120px;
   }
-  .project-overlay p{
-    font-size:16px;
+  .project-overlay p {
+    font-size: 16px;
   }
-  .project-overlay[active="true"] p{
-    font-size:12px;
+  .project-overlay[active="true"] p {
+    font-size: 12px;
   }
   .infoRow p:not(:first-child)::before {
-    content:"\2240";
-    margin:.25em;
+    content: "\2240";
+    margin: .25em;
+  }
+  .projects>* {
+    margin: .25em;
+  }
+  .project-overlay:hover {
+    position: absolute;
+    opacity: .65;
+  }
+  .sectionTransitionImage {
+    padding-bottom: 110px;
+    width: 75%;
+  }
+  .projectDetails {
+    height: 275px;
+  }
+  #projects .content p {
+    margin: .5em;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
-@media only screen and (max-device-width: 767px) and (orientation: landscape) {}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  #contact-form>textarea {
+    height: 35vh;
+  }
+}

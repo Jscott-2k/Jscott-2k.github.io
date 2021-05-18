@@ -214,13 +214,18 @@ $(document).ready(() => {
       e.style.height = "30%";
       e.style.backgroundColor = "#000000";
       e.firstElementChild.style.color = "#FFFFFF";
-
       e.setAttribute("active", true);
     });
   });
   projectsWrappers.forEach(e => {
     e.addEventListener("mousedown", function () {
       showProjectDetails(wrapperProjectMap.get(e).getAttribute("id"));
+      projectsWrappers.forEach(ee => {
+        if(ee.getAttribute("active")){
+          ee.setAttribute("active", false);
+        }
+      });
+      e.setAttribute("active", true);
     });
   });
   projectsWrappers.forEach(e => {
